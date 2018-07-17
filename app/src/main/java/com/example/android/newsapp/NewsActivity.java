@@ -29,7 +29,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
     private NewsAdapter adapter;
     private ListView newsListView;
     private static final String REQUEST_URL =
-            "https://content.guardianapis.com/search?q=netflix";
+            "https://content.guardianapis.com/search?";
 
 
     @Override
@@ -86,6 +86,11 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
                 getString(R.string.settings_order_by_default)
         );
 
+        String keyWord  = sharedPrefs.getString(
+                getString(R.string.settings_key_word_key),
+                getString(R.string.settings_key_word_default)
+        );
+
         // parse breaks apart the URI string that's passed into its parameter
         Uri baseUri = Uri.parse(REQUEST_URL);
 
@@ -93,6 +98,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
         Uri.Builder uriBuilder = baseUri.buildUpon();
 
         // Append query parameter and its value. For example, the `format=geojson`
+        uriBuilder.appendQueryParameter("q", keyWord);
         uriBuilder.appendQueryParameter("order-by", orderBy);
         uriBuilder.appendQueryParameter("page-size", pageSize);
         uriBuilder.appendQueryParameter("show-tags", "contributor");

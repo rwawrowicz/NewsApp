@@ -24,4 +24,8 @@
     <!-- Label for order-by most recent option [CHAR LIMIT=20] -->
     <string name="settings_order_by_relevance_label">Most relevant</string>
     <string name="settings_order_by_relevance_value" translatable="false">relevance</string>
+
+    <string name="settings_key_word_label">Key word to search</string>
+    <string name="settings_key_word_key" translatable="false">key_word</string>
+    <string name="settings_key_word_default" translatable="false">netflix</string>
 </resources>

@@ -27,6 +27,9 @@ public class SettingsActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.settings_main);
 
+            Preference keyWord = findPreference(getString(R.string.settings_key_word_key));
+            bindPreferenceSummaryToValue(keyWord);
+
             Preference pageSize = findPreference(getString(R.string.settings_page_size_key));
             bindPreferenceSummaryToValue(pageSize);
 
