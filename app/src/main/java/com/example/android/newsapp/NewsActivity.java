@@ -96,7 +96,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
         uriBuilder.appendQueryParameter("order-by", orderBy);
         uriBuilder.appendQueryParameter("page-size", pageSize);
         uriBuilder.appendQueryParameter("show-tags", "contributor");
-        uriBuilder.appendQueryParameter("api-key", "test");
+        uriBuilder.appendQueryParameter("api-key", "2e329f4f-1c07-4b87-892d-9611ff2d43a6");
 
         return new NewsLoader(this, uriBuilder.toString());
     }
